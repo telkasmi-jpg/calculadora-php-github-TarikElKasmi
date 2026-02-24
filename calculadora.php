@@ -1,24 +1,30 @@
 <?php
+
 $operacio = $_POST['op'];
 $numero1 = $_POST['n1'];
 $numero2 = $_POST['n2'];
 
-function calcular($operacio, $numero1, $numero2) {
-    if ($operacio == "s") {
-        return $numero1 + $numero2;
-    } else if ($operacio == "r") {
-        return $numero1 - $numero2;
-    } else if ($operacio == "d") {
+switch ($operacio) {
+    case "s":
+        $res = $numero1 + $numero2;
+        break;
+    case "r":
+        $res = $numero1 - $numero2;
+        break;
+    case "m":
+        $res = $numero1 * $numero2;
+        break;
+    case "d":
         if ($numero2 != 0) {
-            return $numero1 / $numero2;
+            $res = $numero1 / $numero2;
+        } else {
+            $res = "Error";
         }
-        return "Error: divisió per zero";
-    } else if ($operacio == "m") {
-        return $numero1 * $numero2;
-    } else {
-        return "Error: operació desconeguda";
-    }
+        break;
+    default:
+        $res = "Error";
+        break;
 }
 
-echo calcular($operacio, $numero1, $numero2);
+echo $res;
 ?>
