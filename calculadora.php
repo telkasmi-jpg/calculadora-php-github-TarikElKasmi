@@ -8,23 +8,28 @@ switch ($operacio) {
     case "s":
         $res = $numero1 + $numero2;
         break;
+
     case "r":
         $res = $numero1 - $numero2;
         break;
+
     case "m":
         $res = $numero1 * $numero2;
         break;
+
     case "d":
         if ($numero2 != 0) {
             $res = $numero1 / $numero2;
         } else {
-            $res = "Error";
+            $res = "Error: no es pot dividir per zero";
         }
         break;
+
     default:
-        $res = "Error";
+        $res = "Error: operació desconeguda";
         break;
 }
 
 echo $res;
+
 ?>
