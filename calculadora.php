@@ -1,4 +1,6 @@
 <?php
+// Calculadora refactoritzada - Variables renombrades per a millor llegibilitat
+
 $operacio = $_POST['op'];
 $primerNumero = $_POST['n1'];
 $segonNumero = $_POST['n2'];
